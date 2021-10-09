@@ -2,7 +2,7 @@ package com.bryonconnolly.revature.project0.daos;
 
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
-import com.revature.models.Home;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ public class AccountDAOImplementation implements AccountDAO {
 	@Override
 	public List<Account> findAll() {
 		try(Connection conn = ConnectionUtil.getConnection()){ //try-with-resources 
-			String sql = "SELECT * FROM homes;";
+			String sql = "SELECT * FROM accounts;";
 			
 			Statement statement = conn.createStatement();
 			
@@ -34,8 +34,9 @@ public class AccountDAOImplementation implements AccountDAO {
 				Account account = new Account();
 				account.setUsername(result.getString("username"));
 				account.setPassword(result.getString("password"));//TODO non plain text passwords
-				account.setTickets(result.getString("tickets"));
+				account.setTickets(result.getInt("tickets"));
 				account.setAdmin(result.getBoolean("is_admin"));
+				account.setPreferedName("preferred_name");
 				list.add(account);
 			}
 			
@@ -67,9 +68,9 @@ public class AccountDAOImplementation implements AccountDAO {
 				
 				account.setUsername(result.getString("username"));
 				account.setPassword(result.getString("password"));//TODO non plain text passwords
-				account.setTickets(result.getString("tickets"));
+				account.setTickets(result.getInt("tickets"));
 				account.setAdmin(result.getBoolean("is_admin"));
-
+				account.setPreferedName("preferred_name");
 			}
 			
 			return account;
@@ -91,21 +92,18 @@ public class AccountDAOImplementation implements AccountDAO {
 	public boolean addAccount(Account account) {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			
-			String sql = "INSERT INTO accounts (username, password, tickets, is_admin, power_animal) "
-					+ "VALUES (?,?,?,?,?,?,?,?);";
+			String sql = "INSERT INTO accounts (username, password, tickets, is_admin, preferred_name) "
+					+ "VALUES (?,?,?,?,?);";
 			
 			int count = 0;
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
 			
-			statement.setString(++count, home.getName());
-			statement.setString(++count, home.getStreetNumber());
-			statement.setString(++count, home.getStreetName());
-			statement.setString(++count, home.getCity());
-			statement.setString(++count, home.getRegion());
-			statement.setString(++count, home.getZip());
-			statement.setString(++count, home.getCountry());
-			statement.setInt(++count, home.getResidents());
+			statement.setString(++count, account.getUsername());
+			statement.setString(++count, account.getPassword());
+			statement.setInt(++count, account.getTickets());
+			statement.setBoolean(++count, account.is_admin());
+			statement.setString(++count, account.getPreferredName());
 			
 			statement.execute();
 			
