@@ -1,24 +1,29 @@
 
-package com.revature.application;
-
-
-
+package com.bryonconnolly.revature.project0;
 
 import static java.lang.System.out;
 import static java.lang.System.err;
 
 import java.io.Console;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.bryonconnolly.revature.project0.controllers.ArcadeController;
+import com.bryonconnolly.revature.project0.controllers.MenuController;
+import com.bryonconnolly.revature.project0.models.Player;
+import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 
+/*****
 class Constants	{
 
 	final static String LOG_FILE_NAME = "logs.txt";//handle this on other const in a better way
 
 }
+********************/
 
 /**
  * @author Bryon Connolly <bryon.connolly@revature.net>
@@ -26,10 +31,9 @@ class Constants	{
  */
 public class Driver {
 
+	/****************************************
 	private static final String CLASS_NAME = Driver.class.getName();
 	private static final String CLASS_SIMPLE_NAME = Driver.class.getSimpleName();	
-	
-	
 	
 	
 	private static final Logger logger = Logger.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
@@ -42,14 +46,50 @@ public class Driver {
 //		logger.fine("FINE");		//NTS by default this is NOT showing
 	}
 	
-	
+	*****************************************/
 	
 	
 	
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+		
+		
+		private static MenuController menuController = new MenuController();
+		
+		public static void main(String[] args) {
+			
+			try(Connection conn = ConnectionUtil.getConnection()){ //try-with-resources 
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+			menuController.welcomeMenu();
+		
+		//TODO Clean below, keep the usuable, trash the rest ************
+		
+		
+		/************TEMP***********************
+		System.out.println("Welcome to the Arcade.");
+		
+		MenuController menuController = new MenuController();
+
+		Player player = menuController.getPlayer();
+		
+		
+		ArcadeController arcadeController = new ArcadeController();
+		ArcadeController.enterArcade(player);
+		
+		System.out.println("Now leaving the gaming area. Saving your winnings.");
+		
+		menuController.savePlayer(player);
+		System.out.println("Saving complete. See you again soon.");
+		
+		**********************TEMP************************/
+		
+				
 		//TODO enable, disable, and change level of logging via args flags... UPDATE NOTE: may be intended to leave config and use lower than info to debug
 /*		Logger.getGlobal().setLevel(Level.ALL);
 		Logger.getGlobal().setLevel((Level.FINEST);
@@ -61,7 +101,7 @@ public class Driver {
 		Logger.getGlobal().setLevel((Level.SEVERE);
 		Logger.getGlobal().setLevel((Level.OFF);
 */
-			
+			/*************************************
 		logger.setLevel(Level.ALL);
 		
 		FileHandler handler = null;
@@ -76,7 +116,7 @@ public class Driver {
 		
 		logger.entering(CLASS_SIMPLE_NAME, "main", args);
 //		logger.entering("class name", "method name", new Object[] { arg1, arg2 });// use this form for methods with multiple params	
-		
+		*************************************/
 
 		
 		/*******
@@ -92,6 +132,7 @@ public class Driver {
 		 *	A character array containing the password or passphrase read from the console, not including any line-termination characters, or null if an end of stream has been reached.
 		 * TODO learn how to do these docs properly
 		 */
+		/**************************************************************
 		Console console;
 		char[] password;
 		if( (console = System.console()) != null && (password = console.readPassword("[%s]","Password: ")) != null ) {
@@ -101,6 +142,13 @@ public class Driver {
 		
 		logger.exiting(CLASS_SIMPLE_NAME, "main");
 //		logger.exiting(String className, String methodName, Object result);//use this form for a method with a return		
+****************************************/
+	
+		
+		
+		
+		
+		
 	}//end main
 
 }

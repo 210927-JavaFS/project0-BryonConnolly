@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.revature.application;
+package com.bryonconnolly.revature.project0.models;
 
 /**
  * @author &

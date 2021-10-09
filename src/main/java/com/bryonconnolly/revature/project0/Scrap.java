@@ -1,13 +1,13 @@
 /**
  *  THIS FILE JUST FOR EXPERIMENTING AND LEARNING THE LANGUAGE AND TOOLS
  */
-package com.revature.$;
+package com.bryonconnolly.revature.project0;
 //    📦
 //₧
 //127 ⌂
 //₧ Alt+ 158
 //U+00A0	\u00A0	&#160;	&nbsp;	non-breaking space
-//❗
+//�?�
 //!
 //¤
 //µ
@@ -28,6 +28,8 @@ import java.awt.event.KeyEvent;
 import java.awt.AWTException;
 
 
+//TODO Implement worthwhile parts of this scrap sheet
+
 
 public class Scrap {
 
@@ -38,7 +40,7 @@ public class Scrap {
 
 
 
-	public static void main(String[] args) {
+	public static void main2(String[] args) {
 
 		byte number = -128;
 		System.out.println(number);
@@ -271,7 +273,10 @@ public class Scrap {
 
 class Animal {
 
+	protected int i;
+	
 	public Animal(){
+		/*private*/i++;//private would not be accessible in subclasses
 		out.println("animal created");
 	}
 
@@ -288,6 +293,11 @@ class Animal {
 }// Animal class
 
 class Ant extends Animal {
+	
+	public Ant() {
+		i++;
+	}
+	
 	@Override
 	protected void finalize(){
 		//called automatically by garbage collector or can be requested with System.gc()
