@@ -12,10 +12,12 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 import com.bryonconnolly.revature.project0.controllers.ArcadeController;
 import com.bryonconnolly.revature.project0.controllers.MenuController;
 import com.bryonconnolly.revature.project0.models.Player;
 import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
+import com.bryonconnolly.revature.project0.utils.ANSI_Escape_Sequence;
 
 /*****
 class Constants	{
@@ -58,6 +60,13 @@ public class Driver {
 		private static MenuController menuController = new MenuController();
 		
 		public static void main(String[] args) {
+			
+			System.out.println("foo");
+			
+	//		System.out.flush();  
+			
+			System.out.print(ANSI_Escape_Sequence.GREEN.code);
+			
 			
 			try(Connection conn = ConnectionUtil.getConnection()){ //try-with-resources 
 				
