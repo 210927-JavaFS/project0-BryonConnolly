@@ -81,16 +81,18 @@ public class MenuController {
 		WelcomeMenuOption response = null;
 		loop:while (response != WelcomeMenuOption.EXIT){
 			response = WelcomeMenuOption.valueOf(scanner.nextInt());
+			scanner.nextLine();//consume the extra new line
 			switch (response) {
 				case LOG_IN:
-					// TODO clear screen or other styling
-					System.out.print("username: ");
+					System.out.println("username: ");
 					String username = scanner.nextLine();
-					System.out.print("password: ");
+					System.err.println("username is : "+username);
+					System.out.println("password: ");
 					String password = scanner.nextLine();
+					System.err.println("password is : "+password);
 					logInUser(username, password);
 					// TODO not complete
-					System.err.println("NOT IMPLEMENTED");// TODO
+
 
 				// Security note: If an application needs to read a password or other secure
 				// data, it should use readPassword() or readPassword(String, Object...) and
@@ -140,47 +142,5 @@ public class MenuController {
 	public void adminMenu() {
 
 	}
-
-	/*******
-	 * TEMP***************************** public Player getPlayer() {
-	 * System.out.println("Are you a returning hero? Type yes/no."); String response
-	 * = scan.nextLine(); if (response.toLowerCase().equals("yes")) {
-	 * ArrayList<Player> alivePlayers = playerService.getPreviousPlayers();
-	 * System.out.println("What player would you like to play as?"); int counter=1;
-	 * for(Player savePlayer:alivePlayers) { System.out.println(counter+")
-	 * "+savePlayer); ++counter; } String choice = scan.nextLine(); try { int
-	 * choiceInt = Integer.valueOf(choice); Player player =
-	 * alivePlayers.get(choiceInt-1); System.out.println("Welcome back
-	 * "+player.getName()+" we are glad you are ready to continue your adventure.");
-	 * return player; }catch(NumberFormatException e) { log.warn("User tried to
-	 * select player that does not exist. "+e.getMessage() );
-	 * System.out.println("That is not a valid input, please try again."); return
-	 * getPlayer(); }
-	 * 
-	 * } else if (response.toLowerCase().equals("no")) { Player player =
-	 * newPlayerBuilder(); return player; } System.out.println("That is not a valid
-	 * choice. Please try again."); return getPlayer(); }
-	 * 
-	 * private Player newPlayerBuilder() { Player player = null;
-	 * System.out.println("What is your player's name?"); String name =
-	 * scan.nextLine(); System.out.println("What is your starting weapon type? \n" +
-	 * "These are your options: \n" + "ARCANE,\r\n" + "HOLY,\r\n" + "FIRE,\r\n" +
-	 * "ICE,\r\n" + "THUNDER,\r\n" + "LIGHT,\r\n" + "DARK,\r\n" + "POISON,\r\n" +
-	 * "ACID,\r\n" + "WATER,\r\n" + "NORMAL"); String type =
-	 * scan.nextLine().toUpperCase(); Element element = null; try { element =
-	 * Element.valueOf(type); player=playerService.createNewPlayer(name, element); }
-	 * catch (IllegalArgumentException e) { log.warn("User attempted to create
-	 * weapon of element that does not exist"); log.warn(e.getMessage());
-	 * System.out.println("That type of weapon does not exist. Please try again.");
-	 * player = newPlayerBuilder(); }
-	 * 
-	 * return player; }
-	 * 
-	 * public void savePlayer(Player player) { playerService.save(player);
-	 * 
-	 * }
-	 ****************************** 
-	 * TEMP
-	 *******************/
 
 }

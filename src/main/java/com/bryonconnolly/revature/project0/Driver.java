@@ -61,11 +61,11 @@ public class Driver {
 		
 		public static void main(String[] args) {
 			
-			System.out.println("foo");
+	//		System.out.println("foo");
 			
 	//		System.out.flush();  
 			
-			System.out.print(ANSI_Escape_Sequence.GREEN.code);
+	//		System.out.print(ANSI_Escape_Sequence.GREEN.code);
 			
 			
 			try(Connection conn = ConnectionUtil.getConnection()){ //try-with-resources 
