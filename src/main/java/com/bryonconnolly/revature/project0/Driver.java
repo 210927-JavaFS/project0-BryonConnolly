@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 
 import com.bryonconnolly.revature.project0.controllers.ArcadeController;
 import com.bryonconnolly.revature.project0.controllers.MenuController;
-import com.bryonconnolly.revature.project0.models.Player;
 import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 import com.bryonconnolly.revature.project0.utils.ANSI_Escape_Sequence;
 

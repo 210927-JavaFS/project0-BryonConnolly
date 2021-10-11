@@ -7,6 +7,8 @@ public abstract class Animal {
 		protected int i;
 		
 		public Animal(){
+			super();// would be implicitly called (added by the compiler) even if not written
+			
 			/*private*/i++;//private would not be accessible in subclasses
 			out.println("animal created");
 		}

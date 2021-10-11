@@ -5,19 +5,18 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bryonconnolly.revature.project0.models.Monster;
-import com.bryonconnolly.revature.project0.models.Player;
-import com.bryonconnolly.revature.project0.services.MonsterService;
-import com.bryonconnolly.revature.project0.services.PlayerService;
+import com.bryonconnolly.revature.project0.models.Account;
+import com.bryonconnolly.revature.project0.services.RedemptionsService;
+import com.bryonconnolly.revature.project0.services.AccountService;
 
 public class GameController {
 
 	private static Scanner scan = new Scanner(System.in);
 	private static Logger log = LoggerFactory.getLogger(GameController.class);
-	private PlayerService playerService = new PlayerService();
-	private MonsterService monsterService = new MonsterService();
+	private AccountService playerService = new AccountService();
+	private RedemptionsService monsterService = new RedemptionsService();
 
-	public boolean enterDungeon(Player player) {
+	public boolean enterDungeon(Account account) {
 		boolean inDungeon = true;
 		while (inDungeon) {
 			System.out.println("Welcome to strict and strong Java Dungeon. What would you like to do? \n"
@@ -28,13 +27,13 @@ public class GameController {
 
 			switch (response) {
 				case "1":
-					searchForMonster(player);
-					if(!(player.getCurrentHealth()>0)) {
+					searchForMonster(account);
+					/*if(!(account.getCurrentHealth()>0)) {
 						return false;
 					}
-					break;
+					break;*/
 				case "2":
-					drinkPotion(player);
+					//drinkPotion(account);
 					break;
 				case "3":
 					System.out.println("You survive the dungeon and return to town.");
@@ -50,29 +49,29 @@ public class GameController {
 		return false;
 	}
 
-	private void drinkPotion(Player player) {
+	private void drinkPotion(Account account) {
 //		System.out.println("You have "+player.getPotions()+" potions remaining. How many would "
 //				+ "you like to drink? You have "+player.getCurrentHealth()+" health remaining out"
 //						+ " of a total of "+player.getMaxHealth());
 		String response = scan.nextLine();
 		try {
 			int potions = Integer.parseInt(response);
-			playerService.drinkPotions(player, potions);
+			//playerService.drinkPotions(account, potions);
 		}catch (NumberFormatException e) {
 			log.warn("Player entered invalid selection for number of potions.");
 			log.warn(e.getMessage());
 			System.out.println("That is not a valid input, please try again.");
-			drinkPotion(player);
+			drinkPotion(account);
 		}
 		
 
 	}
 
-	private void searchForMonster(Player player) {
+	private void searchForMonster(Account account) {
 		System.out.println("You search for a monster to debug...");
-		Monster monster = monsterService.findMonster();
-		System.out.println("You stubble upon a "+monster.getName()+" that looks angry!");
-		monsterService.fight(monster, player);
+		//Monster monster = monsterService.findMonster();
+		//System.out.println("You stubble upon a "+monster.getName()+" that looks angry!");
+		//monsterService.fight(monster, account);
 		
 	}
 

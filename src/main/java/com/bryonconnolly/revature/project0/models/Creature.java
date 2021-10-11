@@ -8,14 +8,12 @@ public class Creature {
 	private static Logger log = LoggerFactory.getLogger(Creature.class);
 	
 	private String name;
-	private Weapon weapon;
 	private int maxHealth;
 	private int currentHealth;
 	
-	public Creature(String name, Weapon weapon, int maxHealth, int currentHealth) {
+	public Creature(String name, int maxHealth, int currentHealth) {
 		super();
 		this.name = name;
-		this.weapon = weapon;
 		if (maxHealth >= 1) {
 			this.maxHealth = maxHealth;
 		} else {
@@ -35,14 +33,6 @@ public class Creature {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Weapon getWeapon() {
-		return weapon;
-	}
-
-	public void setWeapon(Weapon weapon) {
-		this.weapon = weapon;
 	}
 
 	public int getMaxHealth() {
@@ -76,7 +66,7 @@ public class Creature {
 		result = prime * result + currentHealth;
 		result = prime * result + maxHealth;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((weapon == null) ? 0 : weapon.hashCode());
+//		result = prime * result + ((weapon == null) ? 0 : weapon.hashCode());
 		return result;
 	}
 
@@ -98,17 +88,17 @@ public class Creature {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (weapon == null) {
+/*		if (weapon == null) {
 			if (other.weapon != null)
 				return false;
 		} else if (!weapon.equals(other.weapon))
-			return false;
+			return false; */
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Creature [name=" + name + ", weapon=" + weapon + ", maxHealth=" + maxHealth + ", currentHealth="
+		return "Creature [name=" + name + ", maxHealth=" + maxHealth + ", currentHealth="
 				+ currentHealth + "]";
 	}
 	

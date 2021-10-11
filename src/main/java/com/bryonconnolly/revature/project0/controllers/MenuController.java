@@ -10,14 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bryonconnolly.revature.project0.models.Element;
-import com.bryonconnolly.revature.project0.models.Player;
-import com.bryonconnolly.revature.project0.services.PlayerService;
+import com.bryonconnolly.revature.project0.models.Account;
+import com.bryonconnolly.revature.project0.services.AccountService;
 
 public class MenuController {
 
 	private static Scanner scanner = new Scanner(System.in);
 	private static Logger log = LoggerFactory.getLogger(MenuController.class);
-	private PlayerService playerService = new PlayerService();
+	private AccountService playerService = new AccountService();
 
 	private static enum WelcomeMenuOption {
 		LOG_IN("i", "Log in to an existing account"), 
@@ -127,7 +127,7 @@ public class MenuController {
 	}// end welcome menu
 
 	public void logInUser(String username, String password) {
-		// TODO
+		// TODO this may be better if just kept in the switch
 
 	}
 

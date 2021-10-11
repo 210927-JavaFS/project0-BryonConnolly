@@ -4,7 +4,8 @@ import static java.lang.System.out;
 
 public class Gnu extends Animal {
 
-	public Gnu(){
+	public Gnu(){// would be implicitly called (added by the compiler) even if not written
+		super();// would be implicitly called (added by the compiler) even if not written
 		out.println("gnu created");
 	}
 
