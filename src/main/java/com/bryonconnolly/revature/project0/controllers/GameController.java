@@ -5,17 +5,28 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bryonconnolly.revature.project0.Driver;
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.services.RedemptionsService;
+import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 import com.bryonconnolly.revature.project0.services.AccountService;
 
 public class GameController {
 
 	private static Scanner scan = new Scanner(System.in);
-	private static Logger log = LoggerFactory.getLogger(GameController.class);
 	private AccountService playerService = new AccountService();
 	private RedemptionsService monsterService = new RedemptionsService();
 
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= GameController.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= GameController.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
+	
 	public boolean enterDungeon(Account account) {
 		boolean inDungeon = true;
 		while (inDungeon) {

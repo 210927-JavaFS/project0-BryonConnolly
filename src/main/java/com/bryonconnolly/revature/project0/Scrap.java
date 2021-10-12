@@ -22,6 +22,12 @@ import static java.lang.System.in;
 */
 import static java.lang.System.*;
 import java.util.Scanner;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.bryonconnolly.revature.project0.controllers.MenuController;
+
 import java.awt.Toolkit;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -33,7 +39,16 @@ import java.awt.AWTException;
 
 public class Scrap {
 
-
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= Scrap.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= Scrap.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
+	
 	static {
 		System.out.println("in static block");
 	}//end of static block

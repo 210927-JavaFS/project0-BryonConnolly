@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.bryonconnolly.revature.project0.Driver;
+import com.bryonconnolly.revature.project0.Scrap;
+
 public class ConnectionUtil {
 	
 	private static final String DRIVER			=	"org.postgresql.Driver";
@@ -24,6 +30,15 @@ public class ConnectionUtil {
 										+"/"
 										+DATABASE_NAME;
 
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= ConnectionUtil.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= ConnectionUtil.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
 	
 	public static Connection getConnection() throws SQLException {
 		

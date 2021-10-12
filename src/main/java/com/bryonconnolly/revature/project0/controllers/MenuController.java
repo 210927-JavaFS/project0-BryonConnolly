@@ -10,15 +10,32 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bryonconnolly.revature.project0.models.Element;
+import com.bryonconnolly.revature.project0.Driver;
+import com.bryonconnolly.revature.project0.daos.AccountDAO;
+import com.bryonconnolly.revature.project0.daos.AccountDAOImplementation;
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.services.AccountService;
+import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 
 public class MenuController {
 
 	private static Scanner scanner = new Scanner(System.in);
-	private static Logger log = LoggerFactory.getLogger(MenuController.class);
-	private AccountService playerService = new AccountService();
-
+	private AccountService accountService = new AccountService();
+	private AccountDAO accountDAO = new AccountDAOImplementation();
+	private Account account = null;
+	
+	
+	
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= MenuController.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= MenuController.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
+	
 	private static enum WelcomeMenuOption {
 		LOG_IN("i", "Log in to an existing account"), 
 		CREATE_USER("c", "Create a new user"),
@@ -90,7 +107,10 @@ public class MenuController {
 					System.out.println("password: ");
 					String password = scanner.nextLine();
 					System.err.println("password is : "+password);
-					logInUser(username, password);
+					
+					account = accountService.logIn(username,password);
+					
+				
 					// TODO not complete
 
 
@@ -126,21 +146,6 @@ public class MenuController {
 
 	}// end welcome menu
 
-	public void logInUser(String username, String password) {
-		// TODO this may be better if just kept in the switch
 
-	}
-
-	public void createUser() {
-
-	}
-
-	public void playerMenu() {
-
-	}
-
-	public void adminMenu() {
-
-	}
 
 }

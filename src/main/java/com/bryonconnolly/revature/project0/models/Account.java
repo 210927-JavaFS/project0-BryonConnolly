@@ -3,6 +3,9 @@ package com.bryonconnolly.revature.project0.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bryonconnolly.revature.project0.Driver;
+import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
+
 public class Account {
 
 	private String username;
@@ -11,7 +14,14 @@ public class Account {
 	private boolean is_admin;
 	private String preferred_name;
 	
-	private static Logger log = LoggerFactory.getLogger(Account.class);
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= Account.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= Account.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+//		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
 	
 	public void setUsername(String username) {
 		// TODO Auto-generated method stub
@@ -27,8 +37,7 @@ public class Account {
 	}
 	
 	
-	public void setPassword(String string) {
-		// TODO Auto-generated method stub
+	public void setPassword(String password) {
 		this.password = password; //TODO implement non plain text password handling for DB
 		
 	}
@@ -56,7 +65,12 @@ public class Account {
 	}
 
 	public String getPreferredName() {
-		return preferred_name;
+		if(preferred_name!=null) {
+			return preferred_name;
+		} else {
+			log.info("No preferred_name has been set for this account. Using username instead.");
+			return username;
+		}
 	}
 	
 	

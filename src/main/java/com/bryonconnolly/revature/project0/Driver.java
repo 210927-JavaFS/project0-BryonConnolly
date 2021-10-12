@@ -8,10 +8,13 @@ import java.io.Console;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.FileHandler;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 
 import com.bryonconnolly.revature.project0.controllers.ArcadeController;
 import com.bryonconnolly.revature.project0.controllers.MenuController;
@@ -32,22 +35,30 @@ class Constants	{
  */
 public class Driver {
 
-	/****************************************
 	private static final String CLASS_NAME = Driver.class.getName();
 	private static final String CLASS_SIMPLE_NAME = Driver.class.getSimpleName();	
 	
-	
-	private static final Logger logger = Logger.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	//private static final Logger logger = Logger.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	//private static Logger log = LoggerFactory.getLogger(Driver.class);
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);
 	
 	static {
 		
+		// Was originally using built in logger as seen in all commented out lines referencing "logger"
 	//	Logger.getGlobal().info("Driver loaded into memory");
-		logger.info("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+	//	logger.info("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
 //		logger.warning("WARNING"); //NTS by default this is showing
 //		logger.fine("FINE");		//NTS by default this is NOT showing
-	}
+		
+		log.info("Class "+CLASS_SIMPLE_NAME+" loaded into memory... the real Driver");
+		
+		MDC.put("key","value");//just a reminder about MDC
+		
+	}//end static block
 	
-	*****************************************/
+
+	
+
 	
 	
 	
@@ -59,6 +70,9 @@ public class Driver {
 		private static MenuController menuController = new MenuController();
 		
 		public static void main(String[] args) {
+			
+
+			
 			
 	//		System.out.println("foo");
 			

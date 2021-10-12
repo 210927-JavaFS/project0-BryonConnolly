@@ -5,19 +5,31 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bryonconnolly.revature.project0.Driver;
+import com.bryonconnolly.revature.project0.Scrap;
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.models.Element;
 import com.bryonconnolly.revature.project0.services.AccountService;
 import com.bryonconnolly.revature.project0.services.RedemptionsService;
+import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 
 public class ArcadeController {
 
 	private static Scanner scan = new Scanner(System.in);
 	private static GameController gameController = new GameController();
 	private static AccountService accountService = new AccountService();
-	private static Logger log = LoggerFactory.getLogger(ArcadeController.class);
 	private static RedemptionsService redemptionService = new RedemptionsService();
 
+	
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= ArcadeController.class.getName();
+	private static final String CLASS_SIMPLE_NAME	= ArcadeController.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
 	public void enterArcade(Account account) {
 		boolean inArcade = true;
 		while (inArcade) {

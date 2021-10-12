@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //import org.slf4j.MDC;
+import org.slf4j.MDC;
 
+import com.bryonconnolly.revature.project0.Driver;
 import com.bryonconnolly.revature.project0.daos.AccountDAO;
 import com.bryonconnolly.revature.project0.daos.AccountDAOImplementation;
 import com.bryonconnolly.revature.project0.models.Element;
@@ -13,7 +15,17 @@ import com.bryonconnolly.revature.project0.models.Account;
 
 public class AccountService {
 	
-	private static Logger log = LoggerFactory.getLogger(AccountService.class);
+	// Setup and begin Logging
+	private static final String CLASS_NAME 			= AccountService.class.getName();
+	private static final String CLASS_SIMPLE_NAME 	= AccountService.class.getSimpleName();	
+	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
+	static {
+		log.debug("Class "+CLASS_SIMPLE_NAME+" loaded into memory");
+		//MDC.put("key","value");//just a reminder about MDC
+	}//end static block
+	
+	
+	
 	private static AccountDAO accountDAO = new AccountDAOImplementation();
 
 	public Account createNewAccount(String username, String password, String preferred_name,  Element element) {
@@ -74,7 +86,7 @@ public class AccountService {
 	public void buyDrinks(Account account, int purchase) {
 		account.setTickets(account.getTickets()-(purchase*25));//TODO fix this to Constant for Drinks prices
 	//	account.setDrinks(account.getDrinks()+purchase);
-		log.info(account.getUsername()+" bought "+purchase+" drinks.");
+		log.debug(account.getUsername()+" bought "+purchase+" drinks.");
 	}
 
 	public void drinkPotions(Account account, int potions) {//TODO change to use drink coupon
@@ -102,6 +114,34 @@ public class AccountService {
 		*/
 		return allAccounts;
 
+	}
+
+	public Account logIn(String username, String password) {
+		Account account = accountDAO.findByUsername(username);
+		if(checkPassword(account,password)) {
+			log.info("Log in by "+account);
+			System.out.println("Hello "+account.getPreferredName());
+			return account;
+		}else {
+			System.out.println("incorrect username or password");
+			return  null;
+		}
+	}
+
+	private boolean checkPassword(Account account, String password) {
+//		log.debug("In the checkPassword(Account,String) method of an "+CLASS_SIMPLE_NAME+" object.");
+//		System.err.println("account.getPassword() -> "+account.getPassword());
+//		System.err.println("argument password -> "+password);
+		
+		//TODO implement passwords better and not plain text
+		log.debug("REMINDER: TODO: PASSWORD ENCRYPTION");
+		
+		if(account.getPassword().equals(password))
+			return true;
+		else {
+			System.out.println("password does not match");
+			return false;
+		}
 	}
 
 }
