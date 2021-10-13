@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS redemptions;
 
 CREATE TABLE accounts(
 	username VARCHAR(40) PRIMARY KEY,
-	passwordX VARCHAR(40),
+	password VARCHAR(100),
 	tickets INTEGER,
 	is_admin BOOLEAN,
 	preferred_name VARCHAR(80)
@@ -16,9 +16,11 @@ CREATE TABLE accounts(
 
 --first admin account added by this script
 --future admins can be promoted by this admin
---and can later delete this one if desired
-INSERT INTO accounts (username,passwordX,is_admin)
-	VALUES('admin','password',true);
+--and can later delete this one if desired.
+--password is : password
+--encoded_password is : $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+INSERT INTO accounts (username,password,is_admin)
+	VALUES('admin','$2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG',true);
 
 
 CREATE TABLE animals( --fill this IN java

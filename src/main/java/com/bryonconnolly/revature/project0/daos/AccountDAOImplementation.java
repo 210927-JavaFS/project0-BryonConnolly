@@ -47,10 +47,10 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 			while(result.next()) {
 				Account account = new Account();
 				account.setUsername(result.getString("username"));
-				account.setPassword(result.getString("password"));//TODO non plain text passwords
+				account.setEncodedPassword(result.getString("password"));
 				account.setTickets(result.getInt("tickets"));
 				account.setAdmin(result.getBoolean("is_admin"));
-				account.setPreferedName("preferred_name");
+				account.setPreferredName("preferred_name");
 				list.add(account);
 			}
 			
@@ -87,10 +87,10 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 			if(result.next()) {
 				
 				account.setUsername(result.getString("username"));
-				account.setPassword(result.getString("password"));//TODO non plain text passwords
+				account.setEncodedPassword(result.getString("password"));//TODO non plain text passwords
 				account.setTickets(result.getInt("tickets"));
 				account.setAdmin(result.getBoolean("is_admin"));
-				account.setPreferedName(result.getString("preferred_name"));
+				account.setPreferredName(result.getString("preferred_name"));
 			}
 			//log.debug("..found and returning "+account.toString());
 			//log.debug("... account.getPassword() = "+account.getPassword());
@@ -121,7 +121,7 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			
 			statement.setString(++count, account.getUsername());
-			statement.setString(++count, account.getPassword());
+			statement.setString(++count, account.getEncodedPassword());
 			statement.setInt(++count, account.getTickets());
 			statement.setBoolean(++count, account.is_admin());
 			statement.setString(++count, account.getPreferredName());

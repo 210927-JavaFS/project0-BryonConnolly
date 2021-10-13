@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //import org.slf4j.MDC;
 import org.slf4j.MDC;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.bryonconnolly.revature.project0.Driver;
 import com.bryonconnolly.revature.project0.daos.AccountDAO;
@@ -28,16 +29,22 @@ public class AccountService {
 	
 	private static AccountDAO accountDAO = new AccountDAOImplementation();
 
-	public Account createNewAccount(String username, String password, String preferred_name,  Element element) {
+	public Account createNewAccount(String username, String encoded_password, String preferred_name/*,Element element*/) {
 
+		if(accountDAO.findByUsername(username)!= null) {
+			System.out.println("Sorry that username is already taken");
+			return null;
+		}
+		
+		
 		Account account = new Account();
 		account.setUsername(username);
-		account.setPassword(password);
-		account.setPreferedName(preferred_name);
+		account.setEncodedPassword(encoded_password);
+		if(preferred_name!=null)account.setPreferredName(preferred_name);
 		account.setTickets(0);			//this could be left as default as well
 		account.setAdmin(false);		//this could be left as default as well
 		
-		
+/****		
 		switch(element) {
 			case NORMAL:
 //				weapon.setName("Longsword");
@@ -77,11 +84,12 @@ public class AccountService {
 				break;
 			
 		}
-		
+		******/
 		
 		return account;
 	}
 
+	/**********************
 	//TODO change drinks to drink coupons
 	public void buyDrinks(Account account, int purchase) {
 		account.setTickets(account.getTickets()-(purchase*25));//TODO fix this to Constant for Drinks prices
@@ -98,6 +106,7 @@ public class AccountService {
 	//				+ "maximum of "+drinks      .getMaxHealth());
 		}
 	}
+	**********************/
 
 	public void save(Account account) {
 		accountDAO.updateAccount(account);
@@ -129,14 +138,17 @@ public class AccountService {
 	}
 
 	private boolean checkPassword(Account account, String password) {
-//		log.debug("In the checkPassword(Account,String) method of an "+CLASS_SIMPLE_NAME+" object.");
-//		System.err.println("account.getPassword() -> "+account.getPassword());
-//		System.err.println("argument password -> "+password);
 		
-		//TODO implement passwords better and not plain text
-		log.debug("REMINDER: TODO: PASSWORD ENCRYPTION");
+		log.debug("account.getEncodedPassword() = "+account.getEncodedPassword());
+		log.debug("parameter arg password is : "+password);
 		
-		if(account.getPassword().equals(password))
+		
+		
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+		
+		
+		if(encoder.matches(password, account.getEncodedPassword()))
 			return true;
 		else {
 			System.out.println("password does not match");

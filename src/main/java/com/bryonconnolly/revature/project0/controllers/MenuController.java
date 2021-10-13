@@ -3,11 +3,16 @@ package com.bryonconnolly.revature.project0.controllers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.Console;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.bryonconnolly.revature.project0.models.Element;
 import com.bryonconnolly.revature.project0.Driver;
@@ -99,14 +104,24 @@ public class MenuController {
 		loop:while (response != WelcomeMenuOption.EXIT){
 			response = WelcomeMenuOption.valueOf(scanner.nextInt());
 			scanner.nextLine();//consume the extra new line
+			
+			String username;
+			String password;
+			
 			switch (response) {
 				case LOG_IN:
 					System.out.println("username: ");
-					String username = scanner.nextLine();
-					System.err.println("username is : "+username);
+					username = scanner.nextLine();
 					System.out.println("password: ");
-					String password = scanner.nextLine();
-					System.err.println("password is : "+password);
+					password = scanner.nextLine();
+					
+					
+	//				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+	//				String encoded_password = encoder.encode(password);
+	//				assertTrue(encoder.matches(password, encoded_password));
+
+					
+					
 					
 					account = accountService.logIn(username,password);
 					
@@ -133,8 +148,26 @@ public class MenuController {
 				
 				
 				break;
+				
+				
 			case CREATE_USER:
-				System.err.println("NOT IMPLEMENTED");// TODO
+				System.err.println("NOT COMPLETE");// TODO
+				
+				System.out.println("username: ");
+				username = scanner.nextLine();
+				System.out.println("password: ");
+				password = scanner.nextLine();
+
+				
+				
+				
+				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+				String encoded_password = encoder.encode(password);
+//				assertTrue(encoder.matches(password, encoded_password));
+
+				
+				account = accountService.createNewAccount(username, encoded_password, null);//TODO add set preferred name to future menu
+				
 				break;
 			case EXIT:
 				System.out.println("Goodbye.");

@@ -2,6 +2,7 @@ package com.bryonconnolly.revature.project0.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.bryonconnolly.revature.project0.Driver;
 import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
@@ -9,7 +10,7 @@ import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 public class Account {
 
 	private String username;
-	private String password;
+	private String encoded_password;
 	private int tickets;
 	private boolean is_admin;
 	private String preferred_name;
@@ -32,14 +33,16 @@ public class Account {
 		
 	}
 
-	public void setPreferedName(String preferred_name) {
+	public void setPreferredName(String preferred_name) {
 		this.preferred_name = preferred_name;
 	}
 	
 	
-	public void setPassword(String password) {
-		this.password = password; //TODO implement non plain text password handling for DB
+	public void setEncodedPassword(String encoded_password) {
 		
+		this.encoded_password = encoded_password;
+
+
 	}
 
 	
@@ -71,11 +74,6 @@ public class Account {
 			log.info("No preferred_name has been set for this account. Using username instead.");
 			return username;
 		}
-	}
-	
-	
-	public String getPassword() {
-		return password;
 	}
 
 	public int getTickets() {
@@ -119,6 +117,11 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [username=" + username + ", preferred_name=" + preferred_name + ", tickets=" + tickets + ", toString()=" + super.toString() + "]";
+	}
+
+	public String getEncodedPassword() {
+
+		return encoded_password;
 	}
 	
 	
