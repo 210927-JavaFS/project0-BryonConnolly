@@ -5,10 +5,8 @@ import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //import org.slf4j.MDC;
-import org.slf4j.MDC;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.bryonconnolly.revature.project0.Driver;
 import com.bryonconnolly.revature.project0.daos.AccountDAO;
 import com.bryonconnolly.revature.project0.daos.AccountDAOImplementation;
 import com.bryonconnolly.revature.project0.models.Element;
@@ -44,7 +42,7 @@ public class AccountService {
 		account.setTickets(0);			//this could be left as default as well
 		account.setAdmin(false);		//this could be left as default as well
 		
-/****		
+/****FOR TEAMS MAYBEE ****************************************************************		
 		switch(element) {
 			case NORMAL:
 //				weapon.setName("Longsword");
@@ -84,47 +82,29 @@ public class AccountService {
 				break;
 			
 		}
-		******/
+		**************************************************************************************/
+		
+		accountDAO.updateAccount(account);
 		
 		return account;
 	}
 
-	/**********************
-	//TODO change drinks to drink coupons
-	public void buyDrinks(Account account, int purchase) {
-		account.setTickets(account.getTickets()-(purchase*25));//TODO fix this to Constant for Drinks prices
-	//	account.setDrinks(account.getDrinks()+purchase);
-		log.debug(account.getUsername()+" bought "+purchase+" drinks.");
-	}
-
-	public void drinkPotions(Account account, int potions) {//TODO change to use drink coupon
-		for(int i =0; i<potions; ++i) {
-			System.out.println("You quaff a potion");
-	//		player.setPotions(player.getPotions()-1);
-	//		account.setCurrentHealth((int) (account.getCurrentHealth()+((Math.random()*account.getMaxHealth())/3)+1));
-	//		System.out.println("Your current health is now "+player.getCurrentHealth()+" of a "
-	//				+ "maximum of "+drinks      .getMaxHealth());
-		}
-	}
-	**********************/
-
-	public void save(Account account) {
-		accountDAO.updateAccount(account);
-		
-	}
-
-	public ArrayList<Account> getPreviousAccounts() {
+	//--for administration?---------------------------------------------
+	public ArrayList<Account> getAllAccounts() {
 		ArrayList<Account> allAccounts = (ArrayList<Account>) accountDAO.findAll();
-	/*	for(int i =0; i<allPlayers.size(); ++i) {
-			if(allPlayers.get(i).getCurrentTickets)<=0) {
-				allPlayers.remove(i);
-			}
-		}
-		*/
 		return allAccounts;
-
 	}
-
+	
+	//--for administration?---------------------------------------------
+	public ArrayList<Account> getAccountsHavingTickets() {
+		ArrayList<Account> accounts = (ArrayList<Account>) accountDAO.findAll();
+		for(int i=0; i<accounts.size(); i++)
+			if(accounts.get(i).getTickets()<=0)
+				accounts.remove(i);
+		return accounts;
+	}
+	
+	
 	public Account logIn(String username, String password) {
 		Account account = accountDAO.findByUsername(username);
 		if(checkPassword(account,password)) {
@@ -137,23 +117,25 @@ public class AccountService {
 		}
 	}
 
-	private boolean checkPassword(Account account, String password) {
+	boolean checkPassword(Account account, String password) {
 		
 		log.debug("account.getEncodedPassword() = "+account.getEncodedPassword());
 		log.debug("parameter arg password is : "+password);
 		
-		
-		
-		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-		
-		
+				
 		if(encoder.matches(password, account.getEncodedPassword()))
 			return true;
 		else {
 			System.out.println("password does not match");
 			return false;
 		}
+	}//end checkPassword
+	
+	
+	public void save(Account account) {
+		accountDAO.updateAccount(account);
 	}
+	
 
-}
+}//end class AccountService

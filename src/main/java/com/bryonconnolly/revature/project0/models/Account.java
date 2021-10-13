@@ -39,12 +39,15 @@ public class Account {
 	
 	
 	public void setEncodedPassword(String encoded_password) {
-		
 		this.encoded_password = encoded_password;
-
-
 	}
 
+
+	public String getEncodedPassword() {
+		return encoded_password;
+	}
+	
+	
 	
 	
 	
@@ -118,13 +121,5 @@ public class Account {
 	public String toString() {
 		return "Account [username=" + username + ", preferred_name=" + preferred_name + ", tickets=" + tickets + ", toString()=" + super.toString() + "]";
 	}
-
-	public String getEncodedPassword() {
-
-		return encoded_password;
-	}
-	
-	
-	
 
 }
