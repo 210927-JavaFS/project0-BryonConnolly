@@ -1,0 +1,14 @@
+15:56:45.288 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+15:56:45.292 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+15:56:45.292 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+15:56:45.293 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+15:56:45.293 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+15:56:45.293 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+16:00:13.220 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+16:00:13.224 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+16:00:13.225 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+16:00:13.225 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+16:00:13.225 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+16:00:13.226 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+16:00:23.005 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+16:00:23.005 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : username

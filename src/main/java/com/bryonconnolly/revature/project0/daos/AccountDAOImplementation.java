@@ -65,11 +65,11 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 	@Override
 	public Account findByUsername(String username) {
 		
-		//log.debug("In the findByUsername(String) method of an AccountDAOImplementation object.");
+		log.debug("In the findByUsername(String) method of an AccountDAOImplementation object.");
 		
 		try(Connection conn = ConnectionUtil.getConnection()){ //try-with-resources 
 			
-			//log.debug("...and now in the try-with-resources block");
+			log.debug("...and now in the try-with-resources block");
 			
 			String sql = "SELECT * FROM accounts WHERE username = ?;";
 			
@@ -92,8 +92,8 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 				account.setAdmin(result.getBoolean("is_admin"));
 				account.setPreferredName(result.getString("preferred_name"));
 			}
-			//log.debug("..found and returning "+account.toString());
-			//log.debug("... account.getPassword() = "+account.getPassword());
+			log.debug("..found and returning "+account.toString());
+			//log.debug("... account.getEncodedPassword() = "+account.getEncodedPassword());
 			return account;
 			
 		}catch (SQLException e) {
@@ -104,8 +104,13 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 
 	@Override
 	public boolean updateAccount(Account account) {
-		// TODO Auto-generated method stub
-		System.err.println("ERROR: updateAccount not implemented");
+		
+		log.warn("beginning updateAccount(Account) with "+account.toString());
+		
+		String sql = ";";// TODO
+		
+		
+		
 		return false;
 	}
 

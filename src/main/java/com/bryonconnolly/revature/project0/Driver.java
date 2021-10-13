@@ -35,13 +35,17 @@ class Constants	{
  */
 public class Driver {
 
-	private static final String CLASS_NAME = Driver.class.getName();
-	private static final String CLASS_SIMPLE_NAME = Driver.class.getSimpleName();	
+	//this constant was used for setting up logging (but doesn't really need to be abstracted out)
+//	private static final String CLASS_NAME = Driver.class.getName();
+	
+//	private static final String CLASS_SIMPLE_NAME = Driver.class.getSimpleName();
+	private static final String CLASS = Driver.class.getSimpleName();// for neater debugging messages
+
 	
 	//private static final Logger logger = Logger.getLogger(CLASS_NAME);//NTS: Loggers have hierarchy and inherit from parents
 	//private static Logger log = LoggerFactory.getLogger(Driver.class);
-	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);
-	
+//	private static Logger log = LoggerFactory.getLogger(CLASS_NAME);
+	private static Logger log = LoggerFactory.getLogger(Driver.class.getName());
 	static {
 		
 		// Was originally using built in logger as seen in all commented out lines referencing "logger"
@@ -50,7 +54,9 @@ public class Driver {
 //		logger.warning("WARNING"); //NTS by default this is showing
 //		logger.fine("FINE");		//NTS by default this is NOT showing
 		
-		log.info("Class "+CLASS_SIMPLE_NAME+" loaded into memory... the real Driver");
+		log.info(CLASS+" loaded into memory");
+		
+//		log.error("ERROR LOGGING TEST - ERR CONSOLE + FILE");
 		
 		MDC.put("key","value");//just a reminder about MDC
 		
