@@ -118,3 +118,63 @@
 18:04:15.317 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
 18:04:15.317 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
 18:04:15.317 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+07:42:41.806 [] [main] INFO  c.b.r.p.services.AccountServiceTests - In setAccountService
+07:42:41.807 [] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+07:42:41.808 [] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+07:42:41.809 [] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+07:42:45.492 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$WAucoeNfFnnAhqEcpI6r5OKJSZxfxuqVTrcp5XqdtBHYxzBcgtI7O
+07:42:45.492 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Some Password
+07:42:52.603 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$jrFaBWwJm48a7ivBJzQjMenBWJ91FrHtZetOMzE.3qwmLZ5ljAdGm
+07:42:52.603 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : 
+07:42:59.686 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$MOIKEixvmwDgOpic.UCjQusQi6Zd1.ERsbAcdpChKaV2OLqFgGeQW
+07:42:59.686 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is :  
+07:43:06.780 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$nZxq.8zauSdBsfxwQW9WVO3z7saleE34bH2682M3j/ktxRZGCGJKm
+07:43:06.780 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : A
+07:43:13.884 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$zLEYnssYeM9HKo4Fd8y9pe8W.QXXN90usCv.jmECHYFHfSaCBOG3e
+07:43:13.884 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Password
+07:43:21.007 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$X1H0x0FcjnL2EkzfShhdaO6gdnfvoVzEC7QdpeZNPekjN.xJJCKoC
+07:43:21.007 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Number1
+07:43:28.102 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$rYDgWSpWF/.TXfhEOfxUcuhPypSB/MsPQY5Ujy84WTJ47y80zQKAu
+07:43:28.102 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : $ymbol
+07:43:35.202 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$Sn7PSyKHW6UdGABWaPgcW.PUdys/Z7RPPbG3ytH0NxD0ZA4NF22yy
+07:43:35.203 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Extra Long........................
+07:43:57.826 [] [main] INFO  c.b.r.p.services.AccountServiceTests - In setAccountService
+07:43:57.827 [] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+07:43:57.828 [] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+07:43:57.828 [] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+07:44:01.509 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$b/qWBDRQjb4eOxMo5vbXZeFJjkRfby1NquwXhNMRg.eT7YCxh1rWe
+07:44:01.510 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Some Password
+07:44:07.653 [] [main] INFO  c.b.r.p.services.AccountServiceTests - In setAccountService
+07:44:07.655 [] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+07:44:07.656 [] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+07:44:07.656 [] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+07:44:08.629 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$8EBde/aTjkfkN4BX92L1Degc4j0kvmLWQNsEqMK3wYfQanYwYp4pS
+07:44:08.629 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : 
+07:44:11.356 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$uhJh7C6tEVJmrQbYKj6oJ.eDLuFob2Dwsgq2bhoQ0of8L0Jp5JzhS
+07:44:11.356 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Some Password
+07:44:15.874 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$nv75mtyD.hwoKwQ9zt3z1Ogn7WYSNwgcKujRICslIS2YyKTOlnUkm
+07:44:15.875 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is :  
+07:44:18.476 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$1V2CePhy1urNVSS5HVXlvu8HxkMhcRmk7xDn7k5.7ffYZmLNo7d6y
+07:44:18.477 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : 
+07:44:22.985 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$w2aDKXzs7Zct83FWwptbwOFbuLM9VL/jQfhTvUXRPaERj2Bg94nsi
+07:44:22.986 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : A
+07:44:25.606 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$whmXuuljmjO1yTsazBBPwuKaHuJvwwC2Jo9ONCS16l4.WvR1ykGK2
+07:44:25.606 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is :  
+07:44:30.079 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$lzIawYthMnJNZ0pHtQBfEO8Dl8/xlgonbt2MOROx/wblfOl06eL1y
+07:44:30.079 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Password
+07:44:32.734 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$r.usdTY3MC5DmJXEq9WCP.sSI/AGm54w6C2uXwPpQEvarO6HlQk2W
+07:44:32.734 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : A
+07:44:37.172 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$MT0grT9Pkxq7deI38psvMOquxh7b26FSJK1XIPTMmWKeNcRageGhS
+07:44:37.172 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Number1
+07:44:39.868 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$PSAXshVzv16aXUMWZjnrOerIxhMq5xdHJN9IF4b2W30K8GkHNrDWG
+07:44:39.868 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Password
+07:44:44.272 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$vqSUReLzi7FK3f22vazcyOFJXe8ESa4EJ3a99VIYwGtaqSsWkukFy
+07:44:44.272 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : $ymbol
+07:44:47.024 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$q5Dc6qb3pcRphD33GO4So.QDvKyLXSYInTMBR364uJPtd2rB/Wx3C
+07:44:47.024 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Number1
+07:44:51.370 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$8PH2N2ScMZqJXgluYxgiFuQmzcnHTeshpV1E0FTIBUqec0jTJahpa
+07:44:51.370 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Extra Long........................
+07:44:54.160 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$.T8Hub1dmVK9GpPjYCCSqujoRY50Dpe60oiLLWu8FYejaFuYoTSvi
+07:44:54.161 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : $ymbol
+07:45:01.227 [] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$hyWKNAhP2JfHP0p7u0Aa.eIFTsw9VRWJM6XwjI3.XraMAdEjS74/a
+07:45:01.227 [] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : Extra Long........................

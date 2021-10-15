@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS prize_options;
 DROP TABLE IF EXISTS redemptions;
 
 CREATE TABLE accounts(
-	username VARCHAR(40) PRIMARY KEY,
+	username VARCHAR(40) PRIMARY KEY UNIQUE,
 	password VARCHAR(100),
 	tickets INTEGER,
 	is_admin BOOLEAN,
@@ -22,6 +22,8 @@ CREATE TABLE accounts(
 INSERT INTO accounts (username,password,is_admin)
 	VALUES('admin','$2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG',true);
 
+INSERT INTO accounts (username,password,is_admin)
+	VALUES('bryon','$2a$16$zmPKZQZONs6sVg7jc67z8edqjsN0EE1AHEX6dXG9atsDMTHPZRa9K',true);
 
 CREATE TABLE animals( --fill this IN java
 	name VARCHAR(3) PRIMARY KEY

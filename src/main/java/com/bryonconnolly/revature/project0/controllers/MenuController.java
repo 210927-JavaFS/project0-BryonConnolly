@@ -72,12 +72,8 @@ public class MenuController {
 
 		System.out.println("What would you like to do?");
 
-		
-		//TODO JAVA API seems to imply ordinal not being used as intended
-		
-		
 		for (WelcomeMenuOption welcomeMenuOption : WelcomeMenuOption.values()) {
-			System.out.print(welcomeMenuOption.ordinal() + ") ");
+			System.out.print(welcomeMenuOption.ordinal() + ") ");		//TODO JAVA API seems to imply ordinal not being used as intended
 			System.out.println(welcomeMenuOption);
 		}
 
@@ -110,6 +106,7 @@ public class MenuController {
 							java.util.Arrays.fill(password, ' ');
 */
 					account = accountService.logIn(username,password);
+				
 //					 }
 				break;
 				

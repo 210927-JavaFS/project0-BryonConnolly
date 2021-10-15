@@ -91,7 +91,7 @@ public class AccountService {
 		
 		System.out.println("Almost done...");
 		
-		accountDAO.updateAccount(account);
+		accountDAO.addAccount(account);
 		
 		System.out.print(ANSI_Escape_Sequence.GREEN_BRIGHT.code);
 		System.out.println("It is done.");
@@ -147,6 +147,9 @@ public class AccountService {
 		accountDAO.updateAccount(account);
 	}
 
-	
+	public void addTickets(Account account, int number_to_add) {
+		account.addTickets(number_to_add);
+		accountDAO.updateAccount(account);
+	}
 
 }//end class AccountService

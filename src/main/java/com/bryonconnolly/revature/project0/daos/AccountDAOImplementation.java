@@ -108,10 +108,33 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 		
 		log.debug("beginning updateAccount(Account) with "+account.toString());
 		
-		String sql = ";";// TODO
-		
-		
-		
+		try(Connection conn = ConnectionUtil.getConnection()){
+			
+			String sql = "UPDATE accounts"
+					+ " SET password = ?,"
+					+ " tickets = ?,"
+					+ " is_admin = ?,"
+					+ " preferred_name = ?"
+					+ " WHERE username = ?;";
+			
+			log.debug(sql);
+			
+			int count = 0;
+			
+			PreparedStatement statement = conn.prepareStatement(sql);
+
+			statement.setString(++count, account.getEncodedPassword());
+			statement.setInt(++count, account.getTickets());
+			statement.setBoolean(++count, account.is_admin());
+			statement.setString(++count, account.getPreferredName());
+			statement.setString(++count, account.getUsername());			
+			statement.execute();
+			
+			return true;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
