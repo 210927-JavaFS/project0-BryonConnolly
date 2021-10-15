@@ -209,9 +209,10 @@ public class MenuController {
 			System.out.println("What would you like to do?");
 
 			System.out.println("1) Play");
-			System.out.println("2) Change your preferred name");
-			System.out.println("3) Redeem your tickets for prizes");
-			System.out.println(EXIT+") Return to log in screen");			
+			System.out.println("2) Change my preferred name");
+			System.out.println("3) Change my password");
+		//	System.out.println("3) Redeem your tickets for prizes");
+			System.out.println(EXIT+") Return to the log in screen");			
 			
 			response = scanner.nextLine();
 			switch (response) {
@@ -221,21 +222,33 @@ public class MenuController {
 					Random random = new Random();
 					int tickets_won = random.nextInt(10);
 					for(int i=0;i<tickets_won;i++) {
-						System.out.print(ANSI_Escape_Sequence.YELLOW_BACKGROUND);
-						System.out.print(ANSI_Escape_Sequence.BLACK_BRIGHT);
+						System.out.print(ANSI_Escape_Sequence.YELLOW_BACKGROUND.code);
+						System.out.print(ANSI_Escape_Sequence.YELLOW_BOLD_BRIGHT.code);
 						System.out.print("[ONE TICKET]");
 						System.out.print(ANSI_Escape_Sequence.RESET.code);
 						System.out.println();
 					}
+					accountService.addTickets(account, tickets_won);
 					break;
 				
 				case "2":
-
+					System.out.println("What is your preferred name?");
+					account.setPreferredName(scanner.nextLine());			
+					accountService.save(account);
+					System.out.println("it is done.");
 					break;
 
 				case "3":
-
+					System.out.println("What would you like your password to be?");
+					accountService.setPassword(account,scanner.nextLine());
+					System.out.println("it is done.");
 					break;
+					
+	//			case "3":
+
+					
+					
+	//				break;
 								
 					
 				case EXIT:

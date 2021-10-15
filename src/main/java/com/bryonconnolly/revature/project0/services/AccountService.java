@@ -47,48 +47,6 @@ public class AccountService {
 		account.setTickets(0);			//this could be left as default as well
 		account.setAdmin(false);		//this could be left as default as well
 		
-/****FOR TEAMS MAYBEE ****************************************************************		
-		switch(element) {
-			case NORMAL:
-//				weapon.setName("Longsword");
-				break;
-			case ARCANE:
-//				weapon.setName("Arcane bolt");
-				break;
-			case HOLY:
-//				weapon.setName("Holy Word");
-				break;
-			case FIRE:
-//				weapon.setName("Flaming Dagger");
-				break;
-			case ICE:
-//				weapon.setName("Icicle");
-				break;
-			case THUNDER:
-//				weapon.setName("Lightning Rod");
-				break;
-			case LIGHT:
-//				weapon.setName("Light Sabre");
-				break;
-			case DARK:
-//				weapon.setName("Void Blade");
-				break;
-			case POISON:
-//				weapon.setName("Poisoned Dart");
-				break;
-			case ACID:
-//				weapon.setName("Acid Vial");
-				break;
-			case WATER:
-//				weapon.setName("Bucket");
-				break;
-			default:
-//				weapon.setName("Longsword");
-				break;
-			
-		}
-		**************************************************************************************/
-		
 		System.out.println("Almost done...");
 		
 		accountDAO.addAccount(account);
@@ -174,4 +132,14 @@ public class AccountService {
 		account.setAdmin(false);
 		save(account);
 	}
+	
+	
+	public void setPassword(Account account, String raw_password) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+		account.setEncodedPassword(encoder.encode(raw_password));
+		save(account);
+	}
+	
+	
+	
 }//end class AccountService
