@@ -151,28 +151,42 @@ public class MenuController {
 
 	public void adminMenu() {
 		
-		final String EXIT = "3";
+		final String EXIT = "4";
 		String response = null;
 		
 		menu:while (response != EXIT){
 			
 			System.out.println("What would you like to do now?");
 
-			System.out.println("1) Admin Option");
-			System.out.println("2) Admin Option");			
+//			System.out.println("0) Check Stock");
+//			System.out.println("1) Add tickets to a user's account");	
+			System.out.println("1) Take tickets from user");	
+			System.out.println("2) Promote a user to an administrator");	
+			System.out.println("3) Remove a user's admin privilages");
 			System.out.println(EXIT+") Return to log in screen");		
 			
 			response = scanner.nextLine();
 			switch (response) {
 			
+	//			case "0":
+	//				System.err.println("This function is incomplete but will be used to check how many tickets are left in the machine");
+	//				break;
 				case "1":
-						 
-					break;
-				
+					System.out.println("username:");
+					accountService.takeTickets(scanner.nextLine(), scanner.nextInt());
+					System.out.println("it is done.");
 				case "2":
-
+					System.out.println("username<enter> quantity<enter>");
+					accountService.promote(scanner.nextLine());
+					System.out.println("it is done.");
 					break;
-				
+					
+				case "3":
+					System.out.println("username:");
+					accountService.demote(scanner.nextLine());
+					System.out.println("it is done.");
+					break;				
+					
 				case EXIT:
 					System.out.println("Goodbye.");
 					break menu;

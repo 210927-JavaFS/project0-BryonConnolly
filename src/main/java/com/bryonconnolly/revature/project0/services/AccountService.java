@@ -142,7 +142,6 @@ public class AccountService {
 		}
 	}//end checkPassword
 	
-	
 	public void save(Account account) {
 		accountDAO.updateAccount(account);
 	}
@@ -151,5 +150,28 @@ public class AccountService {
 		account.addTickets(number_to_add);
 		accountDAO.updateAccount(account);
 	}
+	
+	public void addTickets(String username, int number_to_add) {
+		Account account = accountDAO.findByUsername(username);
+		account.addTickets(number_to_add);
+		save(account);
+	}
 
+	public void takeTickets(String username, int number_to_take) {
+		Account account = accountDAO.findByUsername(username);
+		account.takeTickets(number_to_take);
+		save(account);
+	}
+	
+	public void promote(String username) {
+		Account account = accountDAO.findByUsername(username);
+		account.setAdmin(true);
+		save(account);
+	}
+
+	public void demote(String username) {
+		Account account = accountDAO.findByUsername(username);
+		account.setAdmin(false);
+		save(account);
+	}
 }//end class AccountService
