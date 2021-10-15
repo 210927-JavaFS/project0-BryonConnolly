@@ -121,6 +121,11 @@ public class AccountService {
 		save(account);
 	}
 	
+	public void takeTickets(Account account, int number_to_take) {
+		account.takeTickets(number_to_take);
+		save(account);
+	}
+	
 	public void promote(String username) {
 		Account account = accountDAO.findByUsername(username);
 		account.setAdmin(true);

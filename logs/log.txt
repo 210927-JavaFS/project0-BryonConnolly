@@ -418,3 +418,123 @@
 09:39:33.272 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
 09:39:36.865 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
 09:39:36.865 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+09:40:00.252 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:40:00.256 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:40:00.257 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:40:00.258 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:40:00.258 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:40:00.258 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:40:19.305 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:40:19.577 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:40:19.887 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+09:40:19.919 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:40:20.191 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:40:20.222 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=person, preferred_name=person, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@b90c1c16]
+09:40:20.222 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$4cikzO2Facj5.nB5kOssu.SVCxYYYroxznUaNDTadjD.2o9etDHeW
+09:40:20.222 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:40:23.871 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=person, preferred_name=person, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@b90c1c16]
+09:41:11.643 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@b90c1c16]
+09:41:11.964 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:41:25.798 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:41:26.071 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:41:26.103 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc3]
+09:41:26.104 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$4cikzO2Facj5.nB5kOssu.SVCxYYYroxznUaNDTadjD.2o9etDHeW
+09:41:26.104 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:41:29.688 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc3]
+09:42:24.588 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:42:24.592 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:42:24.593 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:42:24.594 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:42:24.594 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:42:24.594 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:42:36.470 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:42:36.837 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:42:36.881 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:42:36.882 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$4cikzO2Facj5.nB5kOssu.SVCxYYYroxznUaNDTadjD.2o9etDHeW
+09:42:36.882 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:42:40.500 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:44:15.978 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:44:15.983 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:44:15.984 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:44:15.984 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:44:15.985 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:44:15.985 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:44:51.477 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:44:51.480 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:44:51.481 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:44:51.482 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:44:51.482 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:44:51.482 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:45:09.368 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:45:09.642 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:45:09.681 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:45:09.681 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$4cikzO2Facj5.nB5kOssu.SVCxYYYroxznUaNDTadjD.2o9etDHeW
+09:45:09.681 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:45:13.285 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=person, preferred_name=Human, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:45:15.351 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=person, preferred_name=Human, tickets=2, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c9]
+09:45:15.641 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:46:11.015 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:46:11.358 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:46:11.393 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=bryon, preferred_name=bryon, tickets=5, toString()=com.bryonconnolly.revature.project0.models.Account@7885e668]
+09:46:11.393 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$zmPKZQZONs6sVg7jc67z8edqjsN0EE1AHEX6dXG9atsDMTHPZRa9K
+09:46:11.393 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:46:15.088 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=bryon, preferred_name=bryon, tickets=5, toString()=com.bryonconnolly.revature.project0.models.Account@7885e668]
+09:46:25.027 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:46:25.310 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:46:25.340 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc3]
+09:46:25.340 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+09:46:25.340 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:46:28.943 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc3]
+09:46:28.943 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+09:47:05.122 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:47:05.481 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:47:05.521 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=bryon, preferred_name=bryon, tickets=5, toString()=com.bryonconnolly.revature.project0.models.Account@a7033b3a]
+09:47:05.521 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@a7033b36]
+09:47:05.807 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:47:05.833 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:47:06.108 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:49:27.663 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:49:27.667 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:49:27.668 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:49:27.668 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:49:27.668 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:49:27.669 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:49:34.496 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:49:34.772 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:49:34.822 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:49:34.823 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+09:49:34.823 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:49:38.421 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:49:38.421 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+09:49:47.351 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:49:47.727 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:49:47.758 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@efe1cdb5]
+09:49:47.758 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@efe1cdb5]
+09:49:48.047 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:50:03.003 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:50:03.320 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:50:03.350 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc4]
+09:50:03.350 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@e1f79dc4]
+09:50:03.750 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:50:03.793 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:50:04.096 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:54:51.673 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+09:54:51.678 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+09:54:51.679 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+09:54:51.680 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+09:54:51.680 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+09:54:51.680 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+09:54:58.868 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:54:59.185 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:54:59.233 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:54:59.234 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+09:54:59.234 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+09:55:02.921 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+09:55:02.922 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+09:55:14.597 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:55:14.869 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+09:55:14.901 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=bryon, preferred_name=bryon, tickets=1, toString()=com.bryonconnolly.revature.project0.models.Account@efe1cdb5]
+09:55:14.901 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=bryon, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@efe1cdb4]
+09:55:15.190 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - UPDATE accounts SET password = ?, tickets = ?, is_admin = ?, preferred_name = ? WHERE username = ?;
+09:55:15.223 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+09:55:15.526 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block

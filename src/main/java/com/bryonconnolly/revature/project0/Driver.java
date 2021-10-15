@@ -16,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
-import com.bryonconnolly.revature.project0.controllers.ArcadeController;
 import com.bryonconnolly.revature.project0.controllers.MenuController;
 import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
 import com.bryonconnolly.revature.project0.utils.ANSI_Escape_Sequence;

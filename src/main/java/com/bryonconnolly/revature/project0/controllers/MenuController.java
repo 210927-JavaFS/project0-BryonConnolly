@@ -173,17 +173,22 @@ public class MenuController {
 	//				break;
 				case "1":
 					System.out.println("username:");
-					accountService.takeTickets(scanner.nextLine(), scanner.nextInt());
+					String tickets = scanner.nextLine();
+					int quantity = scanner.nextInt();
+					accountService.takeTickets(tickets, quantity);
 					System.out.println("it is done.");
+					breakl
 				case "2":
 					System.out.println("username<enter> quantity<enter>");
-					accountService.promote(scanner.nextLine());
+					String promoteusername = scanner.nextLine();
+					accountService.promote(promoteusername);
 					System.out.println("it is done.");
 					break;
 					
 				case "3":
 					System.out.println("username:");
-					accountService.demote(scanner.nextLine());
+					String demoteusername = scanner.nextLine();
+					accountService.demote(demoteusername);
 					System.out.println("it is done.");
 					break;				
 					
