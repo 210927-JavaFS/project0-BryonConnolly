@@ -1,12 +1,15 @@
 package com.bryonconnolly.revature.project0.controllers;
 
 import java.util.Map;
+import java.util.Random;
 import java.util.HashMap;
 import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.services.AccountService;
+import com.bryonconnolly.revature.project0.utils.ANSI_Escape_Sequence;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class MenuController {
@@ -68,20 +71,19 @@ public class MenuController {
 	}// end enum
 
 	public void welcomeMenu() {
-		System.out.println("Welcome to the Arcade!");
-
-		System.out.println("What would you like to do?");
-
-		for (WelcomeMenuOption welcomeMenuOption : WelcomeMenuOption.values()) {
-			System.out.print(welcomeMenuOption.ordinal() + ") ");		//TODO JAVA API seems to imply ordinal not being used as intended
-			System.out.println(welcomeMenuOption);
-		}
-
-		
 		
 		// String response = scanner.nextLine();
 		WelcomeMenuOption response = null;
-		loop:while (response != WelcomeMenuOption.EXIT){
+		welcome_menu:while (response != WelcomeMenuOption.EXIT){
+			
+			System.out.println("Welcome to the Arcade!");
+			System.out.println("What would you like to do?");
+
+			for (WelcomeMenuOption welcomeMenuOption : WelcomeMenuOption.values()) {
+				System.out.print(welcomeMenuOption.ordinal() + ") ");		//TODO JAVA API seems to imply ordinal not being used as intended
+				System.out.println(welcomeMenuOption);
+			}
+			
 			response = WelcomeMenuOption.valueOf(scanner.nextInt());
 			scanner.nextLine();//consume the extra new line
 			
@@ -106,8 +108,11 @@ public class MenuController {
 							java.util.Arrays.fill(password, ' ');
 */
 					account = accountService.logIn(username,password);
-				
-//					 }
+					if(account.is_admin())
+						adminMenu();
+					else
+						playerMenu();
+
 				break;
 				
 			case CREATE_USER:
@@ -124,11 +129,17 @@ public class MenuController {
 						account = accountService.createNewAccount(username, encoded_password, null);//TODO add set preferred name to future menu
 //						java.util.Arrays.fill(password, ' ');
 //				 }
+				account = accountService.logIn(username,password);
+				if(account.is_admin())
+					adminMenu();
+				else
+					playerMenu();
+										
 				break;
 				
 			case EXIT:
 				System.out.println("Goodbye.");
-				break loop;
+				break welcome_menu;
 				
 			default:
 					System.out.println("That option is not recognized");
@@ -138,5 +149,95 @@ public class MenuController {
 	}// end welcome menu
 
 
+	public void adminMenu() {
+		
+		final String EXIT = "3";
+		String response = null;
+		
+		menu:while (response != EXIT){
+			
+			System.out.println("What would you like to do now?");
 
-}
+			System.out.println("1) Admin Option");
+			System.out.println("2) Admin Option");			
+			System.out.println(EXIT+") Return to log in screen");		
+			
+			response = scanner.nextLine();
+			switch (response) {
+			
+				case "1":
+						 
+					break;
+				
+				case "2":
+
+					break;
+				
+				case EXIT:
+					System.out.println("Goodbye.");
+					break menu;
+				
+			default:
+					System.out.println("That option is not recognized");
+			}//switch
+		} //end while
+		
+		
+	}
+	
+	public void playerMenu() {
+		
+		final String EXIT = "4";
+		String response = null;
+		
+		menu:while (response != EXIT){
+			
+			System.out.println("What would you like to do?");
+
+			System.out.println("1) Play");
+			System.out.println("2) Change your preferred name");
+			System.out.println("3) Redeem your tickets for prizes");
+			System.out.println(EXIT+") Return to log in screen");			
+			
+			response = scanner.nextLine();
+			switch (response) {
+			
+				case "1":
+					System.out.println("game not connected, simulating a result...");
+					Random random = new Random();
+					int tickets_won = random.nextInt(10);
+					for(int i=0;i<tickets_won;i++) {
+						System.out.print(ANSI_Escape_Sequence.YELLOW_BACKGROUND);
+						System.out.print(ANSI_Escape_Sequence.BLACK_BRIGHT);
+						System.out.print("[ONE TICKET]");
+						System.out.print(ANSI_Escape_Sequence.RESET.code);
+						System.out.println();
+					}
+					break;
+				
+				case "2":
+
+					break;
+
+				case "3":
+
+					break;
+								
+					
+				case EXIT:
+					System.out.println("Goodbye.");
+					break menu;
+				
+			default:
+					System.out.println("That option is not recognized");
+			}//switch
+		} //end while
+		
+	}
+	
+	public void prizeMenu() {
+		
+	}
+	
+	
+}//end MenuController class
