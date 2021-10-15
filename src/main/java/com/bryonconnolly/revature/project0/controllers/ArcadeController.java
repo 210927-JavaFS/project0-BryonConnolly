@@ -2,6 +2,11 @@ package com.bryonconnolly.revature.project0.controllers;
 
 import java.util.Scanner;
 
+
+//------------------------------------------------------------------------------------
+//--[FOR EXAMPLE ONLY ]---------------------------------------------------------------
+//------------------------------------------------------------------------------------
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

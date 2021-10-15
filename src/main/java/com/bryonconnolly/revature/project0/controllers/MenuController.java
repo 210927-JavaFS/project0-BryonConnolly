@@ -1,34 +1,19 @@
 package com.bryonconnolly.revature.project0.controllers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.io.Console;
+import java.util.HashMap;
 import java.util.Scanner;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import com.bryonconnolly.revature.project0.models.Element;
-import com.bryonconnolly.revature.project0.Driver;
-import com.bryonconnolly.revature.project0.daos.AccountDAO;
-import com.bryonconnolly.revature.project0.daos.AccountDAOImplementation;
 import com.bryonconnolly.revature.project0.models.Account;
 import com.bryonconnolly.revature.project0.services.AccountService;
-import com.bryonconnolly.revature.project0.utils.ConnectionUtil;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class MenuController {
 
 	private static Scanner scanner = new Scanner(System.in);
 	private AccountService accountService = new AccountService();
-	private AccountDAO accountDAO = new AccountDAOImplementation();
 	private Account account = null;
-	
 	
 	
 	// Setup and begin Logging
@@ -40,7 +25,6 @@ public class MenuController {
 		//MDC.put("key","value");//just a reminder about MDC
 	}//end static block
 	
-	
 	private static enum WelcomeMenuOption {
 		LOG_IN("i", "Log in to an existing account"), 
 		CREATE_USER("c", "Create a new user"),
@@ -50,7 +34,7 @@ public class MenuController {
 		private String description;
 		private final int index;
 		
-		private static Map map = new HashMap<>();
+		private static Map<Integer, WelcomeMenuOption> map = new HashMap<>();
 		
 		
 		WelcomeMenuOption(String abbreviation, String description) {
@@ -107,71 +91,48 @@ public class MenuController {
 			
 			String username;
 			String password;
-			
+/*			char[] password;
+			Console console = System.console();
+			if(console == null) {
+				log.error("no console available");
+				return;
+			}
+*/			
 			switch (response) {
+			
 				case LOG_IN:
 					System.out.println("username: ");
 					username = scanner.nextLine();
 					System.out.println("password: ");
 					password = scanner.nextLine();
-					
-					
-	//				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-	//				String encoded_password = encoder.encode(password);
-	//				assertTrue(encoder.matches(password, encoded_password));
-
-					
-					
-					
+/*					 if ((password = console.readPassword("[%s]", "Password:")) != null) {
+							account = accountService.logIn(username,new String(password));
+							java.util.Arrays.fill(password, ' ');
+*/
 					account = accountService.logIn(username,password);
-					
-				
-					// TODO not complete
-
-
-				// Security note: If an application needs to read a password or other secure
-				// data, it should use readPassword() or readPassword(String, Object...) and
-				// manually zero the returned character array after processing to minimize the
-				// lifetime of sensitive data in memory.
-
-				/***************
-				 * 
- Console cons;
- char[] passwd;
- if ((cons = System.console()) != null &&
-     (passwd = cons.readPassword("[%s]", "Password:")) != null) {
-     ...
-     java.util.Arrays.fill(passwd, ' ');
- }
-				 */
-				
-				
-				
+//					 }
 				break;
 				
-				
 			case CREATE_USER:
-				System.err.println("NOT COMPLETE");// TODO
-				
 				System.out.println("username: ");
 				username = scanner.nextLine();
 				System.out.println("password: ");
 				password = scanner.nextLine();
-
-				
-				
-				
-				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-				String encoded_password = encoder.encode(password);
-//				assertTrue(encoder.matches(password, encoded_password));
-
-				
-				account = accountService.createNewAccount(username, encoded_password, null);//TODO add set preferred name to future menu
-				
+				System.out.println("Ok. Please hold on while I work on that...");
+//				 if ((password = console.readPassword("[%s]", "Password:")) != null) {
+						BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+//						String encoded_password = encoder.encode(new String(password));
+						String encoded_password = encoder.encode(password);
+//						assertTrue(encoder.matches(password, encoded_password));
+						account = accountService.createNewAccount(username, encoded_password, null);//TODO add set preferred name to future menu
+//						java.util.Arrays.fill(password, ' ');
+//				 }
 				break;
+				
 			case EXIT:
 				System.out.println("Goodbye.");
 				break loop;
+				
 			default:
 					System.out.println("That option is not recognized");
 			}//switch

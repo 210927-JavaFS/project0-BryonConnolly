@@ -1,14 +1,120 @@
-15:56:45.288 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
-15:56:45.292 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
-15:56:45.292 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
-15:56:45.293 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
-15:56:45.293 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
-15:56:45.293 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
-16:00:13.220 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
-16:00:13.224 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
-16:00:13.225 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
-16:00:13.225 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
-16:00:13.225 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
-16:00:13.226 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
-16:00:23.005 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
-16:00:23.005 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : username
+17:20:35.992 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:20:35.996 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:20:35.997 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:20:35.997 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:20:35.997 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:20:35.998 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:23:21.929 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:23:21.933 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:23:21.933 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:23:21.934 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:23:21.934 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:23:21.935 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:23:34.633 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:23:35.145 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:23:35.188 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+17:23:35.189 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+17:23:35.189 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+17:23:38.774 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+17:23:38.775 [key=value] [main] INFO  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+17:25:29.730 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:25:29.734 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:25:29.734 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:25:29.735 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:25:29.735 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:25:29.735 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:25:37.603 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:25:37.875 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:25:37.926 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@87d8b4da]
+17:25:37.927 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+17:25:37.927 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+17:25:41.512 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@87d8b4da]
+17:25:41.512 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+17:26:57.056 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:26:57.060 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:26:57.061 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:26:57.061 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:26:57.061 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:26:57.062 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:40:51.627 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:40:51.631 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:40:51.631 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:40:51.632 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:40:51.632 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:40:51.632 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:40:59.312 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:40:59.822 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:40:59.865 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+17:40:59.865 [key=value] [main] DEBUG c.b.r.p.services.AccountService - account.getEncodedPassword() = $2a$16$tHT0bpiyC9pLK5KbEFbjQuHKX1Tfu7TGRXlheLmRF0NjKV6NxXPNG
+17:40:59.865 [key=value] [main] DEBUG c.b.r.p.services.AccountService - parameter arg password is : password
+17:41:03.460 [key=value] [main] INFO  c.b.r.p.services.AccountService - Log in by Account [username=admin, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@58d5d9c7]
+17:41:03.460 [key=value] [main] WARN  c.b.revature.project0.models.Account - No preferred_name has been set for this account. Using username instead.
+17:41:13.633 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:41:13.636 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:41:13.637 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:41:13.637 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:41:13.638 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:41:13.638 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:41:28.208 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:41:28.484 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:41:28.525 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=null, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@2a081860]
+17:41:35.815 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:41:35.818 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:41:35.819 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:41:35.820 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:41:35.820 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:41:35.820 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:41:44.551 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:41:44.556 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:41:44.556 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:41:44.557 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:41:44.557 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:41:44.558 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:41:59.158 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:41:59.915 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:41:59.959 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ..found and returning Account [username=null, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@2a081860]
+17:45:36.918 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:45:36.922 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:45:36.923 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:45:36.923 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:45:36.923 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:45:36.924 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:45:47.999 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:45:48.243 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:45:48.287 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@2a081860]
+17:54:13.877 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:54:13.880 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:54:13.881 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:54:13.881 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:54:13.881 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:54:13.882 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+17:54:26.530 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+17:54:26.788 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+17:54:26.829 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@2a081860]
+17:58:15.939 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+17:58:15.943 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+17:58:15.943 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+17:58:15.944 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+17:58:15.944 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+17:58:15.944 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+18:00:26.208 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+18:00:26.212 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+18:00:26.213 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+18:00:26.213 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+18:00:26.213 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+18:00:26.214 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+18:00:34.198 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+18:00:34.202 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+18:00:34.202 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+18:00:34.203 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+18:00:34.203 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+18:00:34.203 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory
+18:00:43.638 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - In the findByUsername(String) method of an AccountDAOImplementation object.
+18:00:43.905 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - ...and now in the try-with-resources block
+18:00:43.945 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - beginning updateAccount(Account) with Account [username=bryon, preferred_name=null, tickets=0, toString()=com.bryonconnolly.revature.project0.models.Account@2a081860]
+18:04:15.312 [] [main] INFO  c.b.revature.project0.Driver - Driver loaded into memory
+18:04:15.316 [key=value] [main] DEBUG c.b.r.p.controllers.MenuController - Class MenuController loaded into memory
+18:04:15.316 [key=value] [main] DEBUG c.b.r.p.services.AccountService - Class AccountService loaded into memory
+18:04:15.317 [key=value] [main] DEBUG c.b.revature.project0.Driver - Class Driver loaded into memory
+18:04:15.317 [key=value] [main] DEBUG c.b.r.p.d.AccountDAOImplementation - Class AccountDAOImplementation loaded into memory
+18:04:15.317 [key=value] [main] DEBUG c.b.r.project0.utils.ConnectionUtil - Class ConnectionUtil loaded into memory

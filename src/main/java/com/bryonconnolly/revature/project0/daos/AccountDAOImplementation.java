@@ -91,11 +91,12 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 				account.setTickets(result.getInt("tickets"));
 				account.setAdmin(result.getBoolean("is_admin"));
 				account.setPreferredName(result.getString("preferred_name"));
+				log.debug("..found and returning "+account.toString());
+				return account;
+			}else {
+				return null;//i.e. no such username found
 			}
-			log.debug("..found and returning "+account.toString());
-			//log.debug("... account.getEncodedPassword() = "+account.getEncodedPassword());
-			return account;
-			
+
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -105,7 +106,7 @@ public class AccountDAOImplementation extends DAO implements AccountDAO {
 	@Override
 	public boolean updateAccount(Account account) {
 		
-		log.warn("beginning updateAccount(Account) with "+account.toString());
+		log.debug("beginning updateAccount(Account) with "+account.toString());
 		
 		String sql = ";";// TODO
 		

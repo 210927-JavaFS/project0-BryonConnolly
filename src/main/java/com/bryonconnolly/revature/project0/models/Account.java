@@ -48,9 +48,6 @@ public class Account {
 	}
 	
 	
-	
-	
-	
 	public void setTickets(int tickets) {
 		// TODO Auto-generated method stub
 		this.tickets = tickets;
@@ -74,7 +71,7 @@ public class Account {
 		if(preferred_name!=null) {
 			return preferred_name;
 		} else {
-			log.info("No preferred_name has been set for this account. Using username instead.");
+			log.warn("No preferred_name has been set for this account. Using username instead.");
 			return username;
 		}
 	}

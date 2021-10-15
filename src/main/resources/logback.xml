@@ -11,8 +11,7 @@
   <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
   	<Target>System.err</Target>
          <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>WARN</level>
-            <!-- WAS: <level>ERROR</level> -->            
+            <level>ERROR</level>         
             <onMatch>ACCEPT</onMatch>
             <onMismatch>DENY</onMismatch>
         </filter>

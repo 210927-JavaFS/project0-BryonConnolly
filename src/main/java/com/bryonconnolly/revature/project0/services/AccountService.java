@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.bryonconnolly.revature.project0.daos.AccountDAO;
 import com.bryonconnolly.revature.project0.daos.AccountDAOImplementation;
 import com.bryonconnolly.revature.project0.models.Element;
+import com.bryonconnolly.revature.project0.utils.ANSI_Escape_Sequence;
 import com.bryonconnolly.revature.project0.models.Account;
 
 public class AccountService {
@@ -23,17 +24,21 @@ public class AccountService {
 		//MDC.put("key","value");//just a reminder about MDC
 	}//end static block
 	
-	
-	
+
 	private static AccountDAO accountDAO = new AccountDAOImplementation();
+	
 
 	public Account createNewAccount(String username, String encoded_password, String preferred_name/*,Element element*/) {
 
 		if(accountDAO.findByUsername(username)!= null) {
 			System.out.println("Sorry that username is already taken");
 			return null;
+		}else {
+			System.out.println("Great choice! (i.e. the username "+username+" is available)");
+			System.out.print(ANSI_Escape_Sequence.GREEN.code);
+			System.out.println("Please hold on for a moment while your account is being created...");
+			System.out.print(ANSI_Escape_Sequence.RESET.code);
 		}
-		
 		
 		Account account = new Account();
 		account.setUsername(username);
@@ -84,7 +89,13 @@ public class AccountService {
 		}
 		**************************************************************************************/
 		
+		System.out.println("Almost done...");
+		
 		accountDAO.updateAccount(account);
+		
+		System.out.print(ANSI_Escape_Sequence.GREEN_BRIGHT.code);
+		System.out.println("It is done.");
+		System.out.print(ANSI_Escape_Sequence.RESET.code);	
 		
 		return account;
 	}
@@ -103,7 +114,6 @@ public class AccountService {
 				accounts.remove(i);
 		return accounts;
 	}
-	
 	
 	public Account logIn(String username, String password) {
 		Account account = accountDAO.findByUsername(username);
@@ -136,6 +146,7 @@ public class AccountService {
 	public void save(Account account) {
 		accountDAO.updateAccount(account);
 	}
+
 	
 
 }//end class AccountService
