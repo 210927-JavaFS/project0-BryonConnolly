@@ -172,14 +172,14 @@ public class MenuController {
 	//				System.err.println("This function is incomplete but will be used to check how many tickets are left in the machine");
 	//				break;
 				case "1":
-					System.out.println("username:");
+					System.out.println("username<enter> quantity<enter>");
 					String tickets = scanner.nextLine();
 					int quantity = scanner.nextInt();
 					accountService.takeTickets(tickets, quantity);
 					System.out.println("it is done.");
 					break;
 				case "2":
-					System.out.println("username<enter> quantity<enter>");
+					System.out.println("username:");
 					String promoteusername = scanner.nextLine();
 					accountService.promote(promoteusername);
 					System.out.println("it is done.");
