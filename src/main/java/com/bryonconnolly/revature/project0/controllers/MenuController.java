@@ -177,7 +177,7 @@ public class MenuController {
 					int quantity = scanner.nextInt();
 					accountService.takeTickets(tickets, quantity);
 					System.out.println("it is done.");
-					breakl
+					break;
 				case "2":
 					System.out.println("username<enter> quantity<enter>");
 					String promoteusername = scanner.nextLine();
